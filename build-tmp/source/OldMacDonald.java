@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OldMacDonald extends PApplet {
+
 //your variable declarations here
 public void setup() 
 {    
@@ -67,7 +83,9 @@ class Pig implements Animal
 
 class Chick implements Animal 
 {     
-  private String myType, mySound, mySoundTwo;
+  private String myType;     
+  private String mySound; 
+  private String mySoundTwo;
   private int num;      
   public Chick(String type, String sound, String soundTwo)    
   {         
@@ -113,4 +131,13 @@ class Farm
     }       
     System.out.println( "The cow is known as " + ((NamedCow)aBunchOfAnimals[0]).getName() );    
   } 
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OldMacDonald" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
